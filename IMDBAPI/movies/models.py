@@ -16,7 +16,7 @@ class Genre(models.Model):
 
 
 class Movie(models.Model):
-    owner = models.ForeignKey('auth.User', related_name='movies')
+    owner = models.ForeignKey('auth.User', related_name='movies', null=True)
     name = models.CharField(max_length=100)
     popularity = models.DecimalField(decimal_places=1, max_digits=3,
                                      validators=[MinValueValidator,
